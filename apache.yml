@@ -37,7 +37,7 @@
      tags:
      - version     
      
-        - name: validar version java
+   - name: validar version java
      command: java -version
      register: version3
      tags:
