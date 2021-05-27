@@ -37,5 +37,15 @@
      tags:
      - version     
      
+        - name: validar version java
+     command: java -version
+     register: version3
+     tags:
+     - version
+
+   - name: mostrar version del java
+     debug: var=version3.stdout_lines
+     tags:
+     - version
 
 ...
