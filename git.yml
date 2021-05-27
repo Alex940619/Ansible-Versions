@@ -1,0 +1,19 @@
+---
+- name: Clon Git
+  hosts: localhost
+  
+  vars:
+   - repositorio: "https://github.com/abcnick/Prueba-pipeline.git"
+   - rama: "master"
+   - proy_codigo: "/home/ubuntu/dockerfile"
+
+  tasks:
+
+   - name: Last Commit
+     command: git log -1
+     register: infocommit
+     args:
+       chdir: "{{ repositorio }}"
+
+   - name: Mensaje Commit
+     debug: var=infocommit.stdout_lines

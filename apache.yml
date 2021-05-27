@@ -1,0 +1,41 @@
+---
+- name: validacion de docker apacche y git
+  hosts: localhost
+
+  tasks:
+
+   - name: validar version docker
+     command: docker -v
+     register: version
+     tags:
+     - version
+
+   - name: mostrar version del docker
+     debug: var=version.stdout_lines
+     tags:
+     - version
+     
+   - name: validar version apache
+     command: apachectl -v
+     register: version1
+     tags:
+     - version
+
+   - name: mostrar version del apache2
+     debug: var=version1.stdout_lines
+     tags:
+     - version
+     
+   - name: validar version git
+     command: git --version
+     register: version2
+     tags:
+     - version
+
+   - name: mostrar version del git
+     debug: var=version2.stdout_lines
+     tags:
+     - version     
+     
+
+...
