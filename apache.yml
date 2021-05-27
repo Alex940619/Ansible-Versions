@@ -1,5 +1,5 @@
 ---
-- name: validacion de docker apacche y git
+- name: validacion de docker,apache y git
   hosts: localhost
 
   tasks:
